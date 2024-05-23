@@ -7,34 +7,49 @@
     <title>Módulo</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Add Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 
 <body>
     <div class="container">
         <?php include 'data.php'; ?>
         <h1 class="title">Escoge tu proyecto ideal y fináncialo en cómodas cuotas<sup>2</sup> Diferentes importes, mismos servicios incluidos</h1>
-        <div class="blocks-container">
-            <?php foreach ($blocks as $block) : ?>
-                <div class="block">
-                    <img src="images/<?php echo $block['image']; ?>" alt="<?php echo $block['title']; ?>">
-                    <h3><?php echo $block['title']; ?></h3>
-                    <p><?php echo $block['description']; ?></p>
-                    <button class="more-info-btn" data-title="<?php echo $block['title']; ?>">MÁS INFORMACIÓN!</button>
-                </div>
-            <?php endforeach; ?>
+
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <?php foreach ($blocks as $block) : ?>
+                    <div class="swiper-slide">
+                        <div class="block">
+                            <img src="images/<?php echo $block['image']; ?>" alt="<?php echo $block['title']; ?>">
+                            <h3><?php echo $block['title']; ?></h3>
+                            <p><?php echo $block['description']; ?></p>
+                            <button class="more-info-btn" data-title="<?php echo $block['title']; ?>">MÁS INFORMACIÓN!</button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
+        <!-- End Swiper -->
     </div>
 
     <div class="modal">
         <div class="modal-content">
             <h2 id="modal-title"></h2>
             <div class="line"></div> <!-- Línea horizontal -->
-
             <button id="modal-close">!LO QUIERO!</button>
         </div>
     </div>
 
     <script src="js/script.js"></script>
+    <!-- Add Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>

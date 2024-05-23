@@ -1,10 +1,30 @@
-// js/scripts.js
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.querySelector(".modal");
   const modalContent = document.querySelector(".modal-content");
   const modalTitle = document.getElementById("modal-title");
   const closeModal = document.getElementById("modal-close");
 
+  // Initialize Swiper
+  const swiper = new Swiper(".swiper-container", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: 3, // Display three slides at a time
+    spaceBetween: 20, // Add space between slides
+
+    // If you need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // Add event listener to each more-info-btn
   document.querySelectorAll(".more-info-btn").forEach((button) => {
     button.addEventListener("click", () => {
       modalTitle.textContent = button.getAttribute("data-title");
@@ -16,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Add event listener to close modal
   closeModal.addEventListener("click", () => {
     modalContent.classList.add("fade-out");
     setTimeout(() => {
@@ -24,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 300);
   });
 
+  // Close modal if clicked outside of modal-content
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modalContent.classList.add("fade-out");
