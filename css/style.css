@@ -3,12 +3,19 @@ body {
   background: #f8f8f8;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
 .container {
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%; /* Take up full width of the viewport */
+  max-width: 1440px; /* Set maximum width */
+  margin: 0 auto; /* Center the container horizontally */
   padding: 20px;
+  box-sizing: border-box; /* Include padding and border in the total width */
+  height: 924px; /* Set the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .blocks-container {
@@ -80,6 +87,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  z-index: 9999; /* Ensure modal is on top */
 }
 
 .modal-content {
@@ -93,6 +101,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10000; /* Ensure modal content is on top */
 }
 
 .line {
@@ -128,15 +137,14 @@ body {
   background-color: rgba(38, 77, 243, 1);
 }
 
+/* Title */
 .title {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: bold;
-  width: 100%; /* Adjusted width for Swiper compatibility */
-  height: 82px;
-  display: flex; /* Center horizontally */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Add margin-bottom to create space between title and slider */
 }
 
 .description {

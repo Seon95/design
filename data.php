@@ -22,4 +22,7 @@ $blocks = [
         'description' => '<span class="description-price">550</span>,<span class="description">65 €/mes<sup>2</sup></span>'
     ]
 ];
+
+$num_blocks = count($blocks);
+
 ?>

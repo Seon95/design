@@ -14,10 +14,19 @@
 <body>
     <div class="container">
         <?php include 'data.php'; ?>
-        <h1 class="title">Escoge tu proyecto ideal y fináncialo en cómodas cuotas<sup>2</sup> Diferentes importes, mismos servicios incluidos</h1>
+        <!-- Title Section -->
+        <div class="title-container">
+            <h1 class="title">
+                Escoge tu proyecto ideal y fináncialo en cómodas cuotas<sup>2</sup> <br>
+                Diferentes importes, mismos servicios incluidos
+            </h1>
 
-        <!-- Swiper -->
-        <div class="swiper-container">
+
+        </div>
+        <!-- End Title Section -->
+
+        <!-- Swiper Section -->
+        <div class="swiper-container" data-num-blocks="<?php echo $num_blocks; ?>">
             <div class="swiper-wrapper">
                 <?php foreach ($blocks as $block) : ?>
                     <div class="swiper-slide">
@@ -32,11 +41,9 @@
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+
         </div>
-        <!-- End Swiper -->
+        <!-- End Swiper Section -->
     </div>
 
     <div class="modal">

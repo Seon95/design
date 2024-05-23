@@ -15,13 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // If you need pagination
     pagination: {
       el: ".swiper-pagination",
+      clickable: true, // Make pagination bullets clickable
     },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+    // Enable mouse dragging
+    simulateTouch: true,
+    grabCursor: true,
   });
 
   // Add event listener to each more-info-btn
@@ -54,5 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
         modalContent.classList.remove("fade-out");
       }, 300);
     }
+  });
+
+  // Handle slide change to update pagination
+  swiper.on("slideChange", function () {
+    // This event is automatically handled by Swiper
+    // Custom actions on slide change can be added here if needed
   });
 });
