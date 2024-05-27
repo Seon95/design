@@ -7,35 +7,15 @@ body {
 }
 
 .container {
-  width: 100%; /* Take up full width of the viewport */
-  max-width: 1440px; /* Set maximum width */
-  margin: 0 auto; /* Center the container horizontally */
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box; /* Include padding and border in the total width */
-  height: 924px; /* Set the height */
+  box-sizing: border-box;
+  height: 924px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.blocks-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.block {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  width: 100%; /* Adjusted width for Swiper compatibility */
-  box-sizing: border-box;
-}
-
-.block:hover {
-  transform: translateY(-10px);
 }
 
 .block img {
@@ -43,23 +23,22 @@ body {
   height: 325px;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
 .block h3 {
   font-weight: 700;
-  margin: 20px;
   font-size: 1.5rem;
 }
 
 .block p {
-  margin: 0 20px 20px;
+  margin: 0 0px 20px;
   font-size: 1rem;
   color: #666;
 }
 
 .more-info-btn {
   display: block;
-  margin: 20px;
   padding: 10px 20px;
   background-color: rgb(19, 53, 153);
   color: #fff;
@@ -87,25 +66,27 @@ body {
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Ensure modal is on top */
+  z-index: 9999;
 }
 
 .modal-content {
   background: #fff;
   padding: 20px;
   border-radius: 5px;
-  width: 590px;
-  height: 225px;
+  width: 90%;
+  max-width: 590px;
+  height: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* Ensure modal content is on top */
+  z-index: 10000;
 }
 
 .line {
-  width: 500px;
+  width: 90%;
+  max-width: 500px;
   height: 0;
   border-top: 1px solid #d9dbe4;
   margin: 20px 0;
@@ -115,7 +96,7 @@ body {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: rgb(19, 53, 153);
+  background-color: #133599;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -134,17 +115,16 @@ body {
 }
 
 #modal-close:hover {
-  background-color: rgba(38, 77, 243, 1);
+  background-color: #264df3;
 }
 
-/* Title */
 .title {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: bold;
   width: 100%;
   text-align: center;
-  margin-bottom: 20px; /* Add margin-bottom to create space between title and slider */
+  margin-bottom: 20px;
 }
 
 .description {
@@ -158,4 +138,42 @@ body {
   font-weight: 600;
   color: black;
   font-family: "Montserrat", sans-serif;
+}
+
+.swiper-slide {
+  width: 418px;
+  height: 521px;
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluir el borde en las dimensiones */
+}
+
+.block {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Incluir el relleno en las dimensiones */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.block:hover {
+  transform: translateY(-10px);
+}
+
+.title-container {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .swiper-pagination {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
